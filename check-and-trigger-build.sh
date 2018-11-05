@@ -47,13 +47,14 @@ fi
 trigger_id=$(\
   curl -sLf "https://quay.io/api/v1/repository/opencast/${OPENCAST_DISTRIBUTION}/trigger" \
        -H "Authorization: Bearer ${QUAY_ACCESS_TOKEN}" \
-    | jq -Mr ".triggers[0].id"
+    | jq -Mr ".triggers[0].id" 2> /dev/null
 )
 test "${trigger_id}" != "null" || fail "Repository has no triggers"
 
 # Start trigger
 curl -sLf -X "POST" "https://quay.io/api/v1/repository/opencast/${OPENCAST_DISTRIBUTION}/trigger/${trigger_id}/start" \
+     -o /dev/null \
      -H "Authorization: Bearer ${QUAY_ACCESS_TOKEN}" \
      -H "Content-Type: application/json" \
-     -d "{\"branch_name\": \"${OPENCAST_VERSION}\"}" || fail "Failed to start trigger"
+     -d "{\"branch_name\": \"${OPENCAST_VERSION}\"}" > /dev/null 2>&1 || fail "Failed to start trigger"
 echo "Started trigger"
