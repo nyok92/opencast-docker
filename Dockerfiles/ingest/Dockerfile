@@ -15,7 +15,7 @@
 FROM maven:3.6-jdk-8-slim AS build
 
 ARG repo="https://github.com/opencast/opencast.git"
-ARG branch="r/7.x"
+ARG branch="develop"
 
 ENV OPENCAST_DISTRIBUTION="ingest" \
     OPENCAST_SRC="/usr/src/opencast" \
@@ -29,7 +29,6 @@ ENV OPENCAST_DISTRIBUTION="ingest" \
 
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-      sudo \
       tar gzip bzip2 git \
       ca-certificates openssl \
       make gcc g++ libc-dev \
