@@ -25,7 +25,7 @@ LABEL maintainer="WWU eLectures team <electures.dev@uni-muenster.de>" \
       org.label-schema.docker.debug="docker exec -it $CONTAINER bash"
 
 ARG repo="https://github.com/opencast/opencast.git"
-ARG branch="r/8.x"
+ARG branch="develop"
 
 ENV HUNSPELL_BASE_URL="http://download.services.openoffice.org/contrib/dictionaries" \
     \
@@ -34,7 +34,7 @@ ENV HUNSPELL_BASE_URL="http://download.services.openoffice.org/contrib/dictionar
     ORG_OPENCASTPROJECT_SECURITY_DIGEST_USER="opencast_system_account" \
     ORG_OPENCASTPROJECT_SECURITY_DIGEST_PASS="CHANGE_ME" \
     \
-    OPENCAST_VERSION="8.0" \
+    OPENCAST_VERSION="9.0" \
     OPENCAST_SRC="/usr/src/opencast" \
     OPENCAST_HOME="/opencast" \
     OPENCAST_DATA="/data" \

@@ -164,8 +164,6 @@ For an installation with multiple nodes you can also set:
 
 -   `ORG_OPENCASTPROJECT_DB_VENDOR` Optional<br>
     The type of database to use. Currently you can set this to either `H2` or `MySQL`. The default is `H2`.
--   `ORG_OPENCASTPROJECT_DB_DDL_GENERATION` Optional<br>
-    Specifies whether Opencast should create the database tables or not. It defaults to `false`. In case of `H2` it is always set to `true`.
 -   `NUMER_OF_TIMES_TRYING_TO_CONNECT_TO_DB` Optional<br>
     Specifies how often Opencast is going to try to connect to the specified database before giving up. The waiting time between tries is 5 seconds. The default number of tries is 25. This configuration only applies if the database is not H2.
 
