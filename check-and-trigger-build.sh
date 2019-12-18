@@ -17,7 +17,7 @@
 set -o errexit
 set -o pipefail
 
-WAITING_TIME=15
+WAITING_TIME=30
 
 fail() {
   >&2 echo "$@"
