@@ -38,7 +38,7 @@ before_install:
 
 install:
   # Don't hide the maven output as this leads to Travis thinking that the build is stuck
-  - sed -i 's/--quiet //g' Dockerfiles/$OPENCAST_DISTRIBUTION/Dockerfile
+  - sed -i 's/--quiet //g' Dockerfiles/*/Dockerfile
 
   - docker pull "quay.io/opencast/${OPENCAST_DISTRIBUTION}:$(cat VERSION)" || true
   - make "build-${OPENCAST_DISTRIBUTION}" CUSTOM_DOCKER_BUILD_ARGS="--cache-from 'quay.io/opencast/${OPENCAST_DISTRIBUTION}:$(cat VERSION)'"
